@@ -1,4 +1,4 @@
-name: medilocker
+name: healthscope-ai
 
 services:
   api:

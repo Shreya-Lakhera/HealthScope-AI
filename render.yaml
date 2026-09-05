@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: medilocker-api
+    name: healthscope-ai-api
     runtime: python
     plan: free
     buildCommand: pip install -r backend/requirements.txt
@@ -11,10 +11,10 @@ services:
       - key: PYTHON_VERSION
         value: 3.13.7
       - key: CORS_ORIGINS
-        value: https://medilocker-web.onrender.com
+        value: https://healthscope-ai-web.onrender.com
 
   - type: web
-    name: medilocker-web
+    name: healthscope-ai-web
     runtime: node
     plan: free
     buildCommand: npm ci && npm run build
@@ -24,4 +24,4 @@ services:
       - key: NODE_VERSION
         value: 22.13.0
       - key: VITE_API_URL
-        value: https://medilocker-api.onrender.com
+        value: https://healthscope-ai-api.onrender.com

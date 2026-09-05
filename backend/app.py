@@ -36,7 +36,7 @@ def load_models() -> dict[str, dict[str, Any]]:
 
 
 models = load_models()
-app = FastAPI(title="MediLocker Prediction API", version="2.0.0")
+app = FastAPI(title="HealthScope AI Prediction API", version="2.0.0")
 allowed_origins = [
     origin.strip()
     for origin in os.getenv(

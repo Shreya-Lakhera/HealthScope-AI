@@ -11,8 +11,8 @@ RUN pip install --no-cache-dir -r backend/requirements.txt
 COPY backend ./backend
 COPY ml/artifacts ./ml/artifacts
 
-RUN useradd --create-home medilocker && chown -R medilocker:medilocker /app
-USER medilocker
+RUN useradd --create-home healthscope && chown -R healthscope:healthscope /app
+USER healthscope
 
 ENV PORT=8000
 EXPOSE 8000
