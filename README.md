@@ -32,18 +32,6 @@ models through a private, responsive interface.
 \*The kidney result comes from a small public dataset and should not be treated
 as evidence of clinical performance. 
 
-## Included datasets
-
-All CSV files required to reproduce the current models are committed under
-`ml/data/`:
-
-| Dataset | Rows | Columns | Used by |
-|---|---:|---:|---|
-| `heart_disease_data.csv` | 303 | 14 | Heart model |
-| `indian_liver_patient.csv` | 583 | 11 | Liver model |
-| `kidney_disease.csv` | 400 | 26 | Kidney model |
-| `healthcare-dataset-stroke-data.csv` | 5,110 | 12 | Stroke model |
-
 ## Clone or duplicate the repository
 
 ### Clone this repository
