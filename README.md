@@ -22,15 +22,20 @@ models through a private, responsive interface.
 
 ## Screenshots
 
-Add privacy-safe screenshots to `docs/screenshots/` and include them here. Use
-fictional sample values only—never commit patient information.
+### Home and disease overview
 
-```md
 ![HealthScope AI home page](docs/screenshots/home.png)
+
 ![Disease overview](docs/screenshots/disease-overview.png)
+
+### Screening and result
+
 ![Screening form](docs/screenshots/screening-form.png)
+
 ![Educational result](docs/screenshots/result.png)
-```
+
+The screenshots use fictional demonstration values. Never commit screenshots
+containing patient information.
 
 ## Technology stack
 
