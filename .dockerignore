@@ -1,0 +1,14 @@
+.git
+.gitignore
+.venv
+node_modules
+dist
+.next
+.wrangler
+.sites-runtime
+.openai
+__pycache__
+*.py[cod]
+.env*
+npm-debug.log*
+docs/screenshots
