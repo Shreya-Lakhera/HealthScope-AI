@@ -17,7 +17,7 @@ models through a private, responsive interface.
 | Layer | Technologies | Purpose |
 |---|---|---|
 | Web interface | React 19, TypeScript, Vinext, Vite | Responsive pages, forms, and client-side API requests |
-| Styling | Tailwind CSS, Radix UI primitives, custom CSS | Accessible controls and the MediLocker visual system |
+| Styling | Tailwind CSS, Radix UI primitives, custom CSS | Accessible controls and the HealthScope AI visual system |
 | API | Python, FastAPI, Uvicorn, Pydantic | Model loading, input transport, and prediction endpoints |
 | Machine learning | pandas, NumPy, scikit-learn | Cleaning, preprocessing, training, evaluation, and inference |
 | Packaging | pickle model bundles | Stores each fitted preprocessing pipeline and classifier together |
@@ -46,8 +46,8 @@ as evidence of clinical performance.
 ### Clone this repository
 
 ```bash
-git clone https://github.com/Shreya-Lakhera/MediLocker.git
-cd MediLocker
+git clone https://github.com/Shreya-Lakhera/HealthScope-AI.git
+cd HealthScope AI
 ```
 
 ### Create your own independent copy
@@ -55,12 +55,12 @@ cd MediLocker
 Use GitHub's **Fork** button for a linked copy, or duplicate it without history:
 
 ```bash
-git clone https://github.com/Shreya-Lakhera/MediLocker.git my-medilocker
-cd my-medilocker
+git clone https://github.com/Shreya-Lakhera/HealthScope-AI.git my-HealthScope-AI
+cd my-HealthScope-AI
 rm -rf .git
 git init
 git add .
-git commit -m "Initial MediLocker project"
+git commit -m "Initial HealthScope-AI project"
 ```
 
 On Windows PowerShell, replace `rm -rf .git` with:
@@ -129,15 +129,7 @@ Stop the stack with:
 docker compose down
 ```
 
-Build or run either image independently if needed:
-
-```bash
-docker build -f Dockerfile.api -t medilocker-api .
-docker build -f Dockerfile.web --build-arg VITE_API_URL=http://localhost:8000 -t medilocker-web .
-docker run --rm -p 8000:8000 -e CORS_ORIGINS=http://localhost:3000 medilocker-api
-docker run --rm -p 3000:3000 medilocker-web
-```
-
+Build or run either image independently if needed.
 
 ## Validation
 
