@@ -30,6 +30,7 @@ models through a private, responsive interface.
 | Liver disease | Class-balanced Extra Trees (400 trees) | 9 | 0.8136 | `ml/artifacts/liver_pipeline.pkl` |
 | Chronic kidney disease | Class-balanced random forest (500 trees) | 24 | 1.0000* | `ml/artifacts/kidney_pipeline.pkl` |
 | Stroke | Class-balanced logistic regression | 10 | 0.8436 | `ml/artifacts/stroke_pipeline.pkl` |
+
 \*The kidney result comes from a small public dataset and should not be treated
 as evidence of clinical performance. 
 
