@@ -99,9 +99,6 @@ npm ci
 npm run dev
 ```
 
-Open <http://localhost:5173>. The API and interactive documentation are at
-<http://127.0.0.1:8000> and <http://127.0.0.1:8000/docs>.
-
 You can also run the services separately:
 
 ```bash
@@ -117,9 +114,6 @@ compatible Docker Engine, then run:
 ```bash
 docker compose up --build
 ```
-
-Open <http://localhost:3000>. The containerized API is available at
-<http://localhost:8000/docs>.
 
 Stop the stack with:
 
