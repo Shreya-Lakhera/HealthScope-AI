@@ -20,10 +20,6 @@ models through a private, responsive interface.
 | Packaging | pickle model bundles | Stores each fitted preprocessing pipeline and classifier together |
 | Deployment | Docker, Docker Compose, Render Blueprint | Reproducible local and hosted services |
 
-The frontend and API are separate services. The browser sends a JSON object to
-`POST /predict/{model_name}`; FastAPI orders its fields, runs the complete fitted
-pipeline, and returns the positive-class probability plus an educational label.
-
 ## Included models
 
 | Screening | Algorithm | Inputs | Test ROC-AUC | Artifact |
@@ -34,9 +30,7 @@ pipeline, and returns the positive-class probability plus an educational label.
 | Stroke | Class-balanced logistic regression | 10 | 0.8436 | `ml/artifacts/stroke_pipeline.pkl` |
 
 \*The kidney result comes from a small public dataset and should not be treated
-as evidence of clinical performance. All metrics are one project split, not an
-external clinical validation. Model bundles include the fitted preprocessing,
-feature order, evaluation metrics, positive class, and decision threshold.
+as evidence of clinical performance. 
 
 ## Included datasets
 
@@ -153,21 +147,6 @@ docker build -f Dockerfile.web --build-arg VITE_API_URL=http://localhost:8000 -t
 docker run --rm -p 8000:8000 -e CORS_ORIGINS=http://localhost:3000 medilocker-api
 docker run --rm -p 3000:3000 medilocker-web
 ```
-
-## Retrain the models
-
-The scripts read their matching CSV and replace the matching `.pkl` bundle:
-
-```bash
-python ml/training/train_heart.py
-python ml/training/train_liver.py
-python ml/training/train_kidney.py
-python ml/training/train_stroke.py
-```
-
-Review the printed cross-validation and test metrics. Commit a changed artifact
-only after validating it and confirming that its feature keys still match the UI.
-Never load an untrusted pickle file—pickle can execute code while loading.
 
 ## Validation
 
