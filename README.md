@@ -1,10 +1,10 @@
-# HealthScope AI
+# MediLocker
 
-HealthScope AI is a full-stack educational healthcare machine-learning web app.
+MediLocker is a full-stack educational healthcare machine-learning web app.
 It provides approachable disease overviews and runs four trained screening
 models through a private, responsive interface.
 
-> **Medical disclaimer:** HealthScope AI is a learning and portfolio project, not
+> **Medical disclaimer:** MediLocker is a learning and portfolio project, not
 > a medical device. Its estimates cannot diagnose, rule out, or treat disease.
 > Seek qualified medical care for health concerns and emergency services for
 > urgent symptoms.
@@ -22,27 +22,22 @@ models through a private, responsive interface.
 
 ## Screenshots
 
-### Home and disease overview
+Add privacy-safe screenshots to `docs/screenshots/` and include them here. Use
+fictional sample values only—never commit patient information.
 
-![HealthScope AI home page](docs/screenshots/home.png)
-
+```md
+![MediLocker home page](docs/screenshots/home.png)
 ![Disease overview](docs/screenshots/disease-overview.png)
-
-### Screening and result
-
 ![Screening form](docs/screenshots/screening-form.png)
-
 ![Educational result](docs/screenshots/result.png)
-
-The screenshots use fictional demonstration values. Never commit screenshots
-containing patient information.
+```
 
 ## Technology stack
 
 | Layer | Technologies | Purpose |
 |---|---|---|
 | Web interface | React 19, TypeScript, Vinext, Vite | Responsive pages, forms, and client-side API requests |
-| Styling | Tailwind CSS, Radix UI primitives, custom CSS | Accessible controls and the HealthScope AI visual system |
+| Styling | Tailwind CSS, Radix UI primitives, custom CSS | Accessible controls and the MediLocker visual system |
 | API | Python, FastAPI, Uvicorn, Pydantic | Model loading, input transport, and prediction endpoints |
 | Machine learning | pandas, NumPy, scikit-learn | Cleaning, preprocessing, training, evaluation, and inference |
 | Packaging | pickle model bundles | Stores each fitted preprocessing pipeline and classifier together |
@@ -84,7 +79,7 @@ licenses and terms. Do not add private or identifiable health records.
 ## Repository structure
 
 ```text
-HealthScope-AI/
+MediLocker/
 ├── app/                         # Pages, screening UI, and global styles
 │   └── screenings/[id]/        # Disease overview route
 ├── backend/
@@ -109,8 +104,8 @@ HealthScope-AI/
 ### Clone this repository
 
 ```bash
-git clone https://github.com/Shreya-Lakhera/HealthScope-AI.git
-cd HealthScope-AI
+git clone https://github.com/Shreya-Lakhera/MediLocker.git
+cd MediLocker
 ```
 
 ### Create your own independent copy
@@ -118,12 +113,12 @@ cd HealthScope-AI
 Use GitHub's **Fork** button for a linked copy, or duplicate it without history:
 
 ```bash
-git clone https://github.com/Shreya-Lakhera/HealthScope-AI.git my-healthscope-ai
-cd my-healthscope-ai
+git clone https://github.com/Shreya-Lakhera/MediLocker.git my-medilocker
+cd my-medilocker
 rm -rf .git
 git init
 git add .
-git commit -m "Initial HealthScope AI project"
+git commit -m "Initial MediLocker project"
 ```
 
 On Windows PowerShell, replace `rm -rf .git` with:
@@ -202,10 +197,10 @@ docker compose down
 Build or run either image independently if needed:
 
 ```bash
-docker build -f Dockerfile.api -t healthscope-ai-api .
-docker build -f Dockerfile.web --build-arg VITE_API_URL=http://localhost:8000 -t healthscope-ai-web .
-docker run --rm -p 8000:8000 -e CORS_ORIGINS=http://localhost:3000 healthscope-ai-api
-docker run --rm -p 3000:3000 healthscope-ai-web
+docker build -f Dockerfile.api -t medilocker-api .
+docker build -f Dockerfile.web --build-arg VITE_API_URL=http://localhost:8000 -t medilocker-web .
+docker run --rm -p 8000:8000 -e CORS_ORIGINS=http://localhost:3000 medilocker-api
+docker run --rm -p 3000:3000 medilocker-web
 ```
 
 ## Retrain the models
@@ -228,9 +223,9 @@ Never load an untrusted pickle file—pickle can execute code while loading.
 1. Push this repository to GitHub.
 2. Open the [Render Dashboard](https://dashboard.render.com/blueprints).
 3. Select **New Blueprint Instance**.
-4. Connect the GitHub repository and select HealthScope-AI.
+4. Connect the GitHub repository and select MediLocker.
 5. Render detects `render.yaml`; review and apply both services.
-6. Wait for `healthscope-ai-api` to pass `/health`, then open `healthscope-ai-web`.
+6. Wait for `medilocker-api` to pass `/health`, then open `medilocker-web`.
 
 The Blueprint sets `VITE_API_URL` for the web build and `CORS_ORIGINS` for the
 API. If Render changes a service name because it is already taken, update those
@@ -260,4 +255,4 @@ python -m py_compile backend/app.py ml/training/*.py
 
 The project structure and README presentation were informed by the public
 [Healthcare-AI-WebApp](https://github.com/kaymen99/Healthcare-AI-WebApp), while
-HealthScope AI uses its own implementation, models, interface, API, and deployment.
+MediLocker uses its own implementation, models, interface, API, and deployment.
