@@ -2,22 +2,6 @@
 
 A polished, responsive educational health-screening interface built with React, TypeScript, Vinext, Tailwind CSS, and accessible UI components.
 
-## What is included
-
-- Landing page with heart, liver, kidney, and stroke screening cards
-- Complete forms for all four trained screening models
-- Required-field, range, and numeric validation
-- Progress indicator and mobile-responsive layouts
-- Exact model-order payload generation
-- FastAPI prediction service with probability responses
-- Privacy and educational-use messaging
-
-## Requirements
-
-- Node.js 22.13 or newer
-- Python 3.10 or newer
-- npm and pip
-
 ## Install and run
 
 ```bash
