@@ -1,36 +1,13 @@
 # MediLocker
 
 MediLocker is a full-stack educational healthcare machine-learning web app.
-It provides approachable disease overviews and runs four trained screening
+It provides approachable disease overviews for Heart, liver, chronic kidney disease, and stroke screening and runs four trained screening
 models through a private, responsive interface.
 
 > **Medical disclaimer:** MediLocker is a learning and portfolio project, not
 > a medical device. Its estimates cannot diagnose, rule out, or treat disease.
 > Seek qualified medical care for health concerns and emergency services for
 > urgent symptoms.
-
-## Features
-
-- Heart, liver, chronic kidney disease, and stroke screening forms
-- A dedicated overview page for each condition
-- Common symptom and urgent-care guidance from public-health sources
-- Exact model inputs, general reference values, and data-entry guidance
-- Input validation, loading states, and readable probability results
-- Four complete scikit-learn pipelines served through FastAPI
-- Local development, Docker Compose, and Render deployment support
-- No database, analytics, accounts, or persistence of submitted health values
-
-## Screenshots
-
-Add privacy-safe screenshots to `docs/screenshots/` and include them here. Use
-fictional sample values only—never commit patient information.
-
-```md
-![MediLocker home page](docs/screenshots/home.png)
-![Disease overview](docs/screenshots/disease-overview.png)
-![Screening form](docs/screenshots/screening-form.png)
-![Educational result](docs/screenshots/result.png)
-```
 
 ## Technology stack
 
@@ -72,32 +49,6 @@ All CSV files required to reproduce the current models are committed under
 | `indian_liver_patient.csv` | 583 | 11 | Liver model |
 | `kidney_disease.csv` | 400 | 26 | Kidney model |
 | `healthcare-dataset-stroke-data.csv` | 5,110 | 12 | Stroke model |
-
-Before redistributing or using the datasets commercially, verify their original
-licenses and terms. Do not add private or identifiable health records.
-
-## Repository structure
-
-```text
-MediLocker/
-├── app/                         # Pages, screening UI, and global styles
-│   └── screenings/[id]/        # Disease overview route
-├── backend/
-│   ├── app.py                   # FastAPI prediction API
-│   └── requirements.txt         # Pinned Python runtime packages
-├── components/ui/               # Four UI primitives used by the app
-├── lib/screening-info.ts        # Disease, model, and parameter information
-├── ml/
-│   ├── artifacts/               # Four ready-to-use fitted model bundles
-│   ├── data/                    # Four training CSV files
-│   └── training/                # Reproducible training scripts
-├── public/                      # Browser assets
-├── scripts/dev.mjs              # Starts the API and web app together
-├── Dockerfile.api               # Production API container
-├── Dockerfile.web               # Production frontend container
-├── compose.yaml                 # Local two-container stack
-└── render.yaml                  # Render two-service Blueprint
-```
 
 ## Clone or duplicate the repository
 
@@ -218,33 +169,6 @@ Review the printed cross-validation and test metrics. Commit a changed artifact
 only after validating it and confirming that its feature keys still match the UI.
 Never load an untrusted pickle file—pickle can execute code while loading.
 
-## Deploy on Render
-
-1. Push this repository to GitHub.
-2. Open the [Render Dashboard](https://dashboard.render.com/blueprints).
-3. Select **New Blueprint Instance**.
-4. Connect the GitHub repository and select MediLocker.
-5. Render detects `render.yaml`; review and apply both services.
-6. Wait for `medilocker-api` to pass `/health`, then open `medilocker-web`.
-
-The Blueprint sets `VITE_API_URL` for the web build and `CORS_ORIGINS` for the
-API. If Render changes a service name because it is already taken, update those
-two variables to the generated public URLs and redeploy both services.
-
-## API routes
-
-| Method | Route | Description |
-|---|---|---|
-| `GET` | `/health` | API status and loaded model names |
-| `GET` | `/docs` | Interactive OpenAPI documentation |
-| `POST` | `/predict/heart` | Heart model inference |
-| `POST` | `/predict/liver` | Liver model inference |
-| `POST` | `/predict/kidney` | Kidney model inference |
-| `POST` | `/predict/stroke` | Stroke model inference |
-
-Requests must contain exactly the feature keys documented on each disease page.
-The API rejects missing and unknown fields.
-
 ## Validation
 
 ```bash
@@ -252,7 +176,3 @@ npm run lint
 npm run build
 python -m py_compile backend/app.py ml/training/*.py
 ```
-
-The project structure and README presentation were informed by the public
-[Healthcare-AI-WebApp](https://github.com/kaymen99/Healthcare-AI-WebApp), while
-MediLocker uses its own implementation, models, interface, API, and deployment.
