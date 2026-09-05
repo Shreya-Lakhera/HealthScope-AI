@@ -40,21 +40,6 @@ npm run build
 npm run start
 ```
 
-## Deploy on Render
-
-This repository includes a `render.yaml` Blueprint for two services:
-
-- `medilocker-web` — the Vinext web interface
-- `medilocker-api` — the FastAPI prediction service
-
-In the Render dashboard, choose **New > Blueprint**, connect this GitHub
-repository, and apply the detected Blueprint. The frontend is configured to
-call the public API service, and the API allows requests from the frontend.
-
-If Render changes either service name because it is already taken, update
-`VITE_API_URL` on the web service and `CORS_ORIGINS` on the API service to
-match the two generated `onrender.com` URLs, then redeploy both services.
-
 ## Main files
 
 - `app/page.tsx` — content, feature definitions, validation, interactions, and result view
@@ -63,25 +48,6 @@ match the two generated `onrender.com` URLs, then redeploy both services.
 - `components/ui/` — reusable accessible UI primitives
 - `package.json` and `package-lock.json` — exact dependencies
 - `public/` — favicon and static assets
-
-## Feature order
-
-Heart:
-
-```text
-age, sex, cp, trestbps, chol, fbs, restecg, thalach,
-exang, oldpeak, slope, ca, thal
-```
-
-Liver:
-
-```text
-Age, Total_Bilirubin, Direct_Bilirubin, Alkaline_Phosphotase,
-Alamine_Aminotransferase, Aspartate_Aminotransferase,
-Total_Protiens, Albumin, Albumin_and_Globulin_Ratio
-```
-
-The misspellings in the liver feature keys are preserved because they match the original dataset and notebook.
 
 ## Medical safety
 
