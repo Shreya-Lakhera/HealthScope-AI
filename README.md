@@ -1,5 +1,8 @@
 # HealthScope AI
 
+![alt text](<medilocker 1.png>)
+
+
 HealthScope AI is a full-stack educational healthcare machine-learning web app.
 It provides approachable disease overviews and runs four trained screening
 models through a private, responsive interface.
@@ -32,6 +35,11 @@ models through a private, responsive interface.
 
 \*The kidney result comes from a small public dataset and should not be treated
 as evidence of clinical performance. 
+
+![alt text](<medilocker 3.png>)
+
+![alt text](<medilocker 4.png>)
+
 
 ## Clone or duplicate the repository
 
